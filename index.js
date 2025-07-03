@@ -6,7 +6,9 @@ button.addEventListener("click",()=>{
     const input=inputEle.value
     let inputArr=input.split("")
     for(let i=1;i<inputArr.length+1;i++){
-    let string=inputArr.toSpliced(i)
-    output.innerHTML+=string.join("")+'<br>'
+    let newArr=inputArr.toSpliced(i)
+    if(newArr[newArr.length-1]!=" "){
+    output.innerHTML+=newArr.join("")+'<br>'
+    }
     }
 })

@@ -8,6 +8,7 @@ button.addEventListener("click",()=>{
     for(let i=1;i<inputArr.length+1;i++){
     let newArr=inputArr.toSpliced(i)
     if(newArr[newArr.length-1]!=" "){
+        //????
     output.innerHTML+=newArr.join("")+'<br>'
     }
     }

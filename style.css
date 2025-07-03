@@ -18,6 +18,7 @@ button:active{
         cursor:pointer;
 }
 .output{
+    white-space: nowrap;
     line-height:20px;
     font-family:monospace;
 }

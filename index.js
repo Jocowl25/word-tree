@@ -1,7 +1,8 @@
 const inputEle=document.querySelector('input')
-const button=document.querySelector('button')
+const go=document.querySelector('.go')
+const copy=document.querySelector('.copy')
 const output=document.querySelector('.output')
-button.addEventListener("click",()=>{
+go.addEventListener("click",()=>{
     output.innerHTML=""
     const input=inputEle.value
     let inputArr=input.split("")
@@ -12,4 +13,8 @@ button.addEventListener("click",()=>{
     output.innerHTML+=newArr.join("")+'<br>'
     }
     }
+})
+copy.addEventListener("click",()=>{
+    navigator.clipboard.writeText(output.innerText);
+    alert("Text Copied!")
 })

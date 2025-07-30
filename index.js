@@ -3,7 +3,7 @@ const go=document.querySelector('.go')
 const copy=document.querySelector('.copy')
 const output=document.querySelector('.output')
 const charset="qwertyuiopasdfghjklzxcvbnm1234567890".split("")
-const precedingchars=` "(`.split("") //set of characters that are connected to the next character in the tree
+const precedingCharset=` @#"{[(`.split("") //set of characters that are connected to the next character in the tree
 go.addEventListener("click",()=>{
     output.innerHTML=""
     const input=inputEle.value
@@ -15,11 +15,11 @@ go.addEventListener("click",()=>{
         const nextChar=inputArr[i]
         const prevChar=inputArr[i-2]
         if(!charset.includes(currentChar.toLowerCase())){
-            if(precedingchars.includes(currentChar)||(i>2&&charset.includes(prevChar.toLowerCase()))){
-            continue
+            if(precedingCharset.includes(currentChar)||(i>2&&charset.includes(prevChar.toLowerCase()))){
+                continue
             }
         }
-        else if(!precedingchars.includes(currentChar)&&i<inputArr.length&&!charset.includes(nextChar.toLowerCase())){
+        else if(!precedingCharset.includes(currentChar)&&i<inputArr.length&&!charset.includes(nextChar.toLowerCase())){
             additChar=nextChar
         }
         output.innerHTML+=newArr.join("")+additChar+'<br>'
